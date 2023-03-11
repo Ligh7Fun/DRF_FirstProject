@@ -3,6 +3,7 @@ from rest_framework import serializers
 
 
 class WomenSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
     title = serializers.CharField(max_length=255)
     content = serializers.CharField()
     time_create = serializers.DateTimeField(read_only=True)
@@ -12,4 +13,5 @@ class WomenSerializer(serializers.Serializer):
 
 
 class CategorySerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=255)
