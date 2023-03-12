@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление данных</title>
+</head>
+<body>
+<h2>Добавить запись</h2>
+<form id="add-post-form">
+    <label for="title">Заголовок:</label>
+    <input type="text" id="title" name="title"><br><br>
+    <label for="content">Содержание:</label>
+    <textarea id="content" name="content"></textarea><br><br>
+    <label for="cat_id">Категория:</label>
+    <select name="cat_id" id="cat_id">
+        <option value="">Выберите категорию</option>
+        <!-- здесь будут динамически добавляться опции -->
+    </select>
+    <input id="popa" type="submit" value="Добавить запись">
+</form>
+
+<hr>
+
+<h2>Добавить категорию</h2>
+<form id="add-cat-form">
+    <label for="cat_name">Название категории:</label>
+    <input type="text" id="cat_name" name="cat_name"><br><br>
+    <input type="submit" value="Добавить категорию">
+</form>
+
+
+</body>
+</html>
