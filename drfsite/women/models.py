@@ -34,7 +34,7 @@ class Women(models.Model):
         verbose_name_plural = "Девушки"
         ordering = ['-time_create', 'title']
 
-    def __str__(self):
+    def str(self):
         return self.title
 
 
@@ -50,5 +50,47 @@ class Category(models.Model):
         verbose_name_plural = "Категории"
         ordering = ['id']
 
-    def __str__(self):
+    def str(self):
         return self.name
+
+
+class Users(models.Model):
+    first_name = models.CharField(
+        max_length=255,
+        verbose_name='Имя',
+    )
+    last_name = models.CharField(
+        max_length=255,
+        verbose_name='Фамилия',
+    )
+    nick_name = models.CharField(
+        max_length=255,
+        verbose_name='Никнейм',
+    )
+    email = models.EmailField(
+        unique=True,
+        max_length=255,
+        verbose_name='Электронная почта',
+    )
+    password = models.CharField(
+        max_length=255,
+        verbose_name='Пароль'
+    )
+    gender = models.CharField(
+        max_length=50,
+        blank=True,
+        verbose_name='Пол',
+    )
+    custom_gender = models.CharField(
+        max_length=50,
+        blank=True,
+        verbose_name='Пользовательский пол',
+    )
+
+    class Meta:
+        verbose_name = 'Пользователь приложения'
+        verbose_name_plural = 'Пользователи приложения'
+        ordering = ['id', 'nick_name']
+
+    def str(self):
+        return self.nick_name

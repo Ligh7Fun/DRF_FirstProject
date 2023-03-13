@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from women.models import Category, Women
+from women.models import Category, Women, Users
 
 
 class WomenAdmin(admin.ModelAdmin):
@@ -19,9 +19,6 @@ class WomenAdmin(admin.ModelAdmin):
         'title',
         'content',
     )
-    # list_editable = (
-    #     'is_published',
-    # )
     list_filter = (
         'is_published',
         'time_create',
@@ -42,5 +39,36 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
+class UsersAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'nick_name',
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'gender',
+        'custom_gender',
+    )
+    list_display_links = (
+        'nick_name',
+        'first_name',
+        'last_name',
+    )
+    search_fields = (
+        'nick_name',
+        'first_name',
+        'last_name',
+        'email',
+        'gender',
+        'custom_gender',
+    )
+    list_filter = (
+        'gender',
+        'custom_gender',
+    )
+
+
 admin.site.register(Women, WomenAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Users, UsersAdmin)
