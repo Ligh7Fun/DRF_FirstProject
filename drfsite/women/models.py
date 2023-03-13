@@ -34,7 +34,7 @@ class Women(models.Model):
         verbose_name_plural = "Девушки"
         ordering = ['-time_create', 'title']
 
-    def str(self):
+    def __str__(self):
         return self.title
 
 
@@ -50,7 +50,7 @@ class Category(models.Model):
         verbose_name_plural = "Категории"
         ordering = ['id']
 
-    def str(self):
+    def __str__(self):
         return self.name
 
 
@@ -92,5 +92,5 @@ class Users(models.Model):
         verbose_name_plural = 'Пользователи приложения'
         ordering = ['id', 'nick_name']
 
-    def str(self):
+    def __str__(self):
         return self.nick_name
